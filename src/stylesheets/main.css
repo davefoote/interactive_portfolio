@@ -3,10 +3,6 @@ a {
   cursor: pointer;
 }
 
-* {
-    border: thin solid red;
-}
-
 html,
 body {
   background: #D6D6CE;
