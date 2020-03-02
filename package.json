@@ -29,7 +29,16 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "domready": "^1.0.8"
+    "concat-stream": "^2.0.0",
+    "d3": "^5.15.0",
+    "domready": "^1.0.8",
+    "minimist": "^1.2.0",
+    "simplify-geojson": "^1.0.3",
+    "simplify-geometry": "^0.0.2",
+    "standard": "^14.3.1",
+    "tape": "^4.13.0",
+    "topojson": "^3.0.2",
+    "topojson-simplify": "^3.0.3"
   },
   "scripts": {
     "start": "webpack-dev-server",

@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="flex-down">
+          <h1>Critical Habitat Ranges by Species Type</h1>
+          <div>See what land is critically important to</div>
+          <div>the United States' Birds, Insects, Amphibians,</div>
+          <div>Mammals, and Reptiles</div>
+            <div class="buttons-container"></div>
+              <script src="https://unpkg.com/topojson-client@3"></script>
+              <script src="https://unpkg.com/topojson-simplify@3"></script>
+            <div class="flex" id="mapzone"></div>
+          <div class="sidebar"></div>
+          <div class="main-area"></div>
+      </div>
+    </div>
     <script src="bundle.js"></script>
   </body>
 </html>
