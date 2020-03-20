@@ -5,6 +5,11 @@ var topojsonSimplify = require("topojson-simplify");
 // if the data you are going to import is small, then you can import it using es6 import
 // import MY_DATA from './app/data/example.json'
 // (I tend to think it's best to use screaming snake case for imported json)
+var loader = document.getElementsByClassName('loader');
+
+window.addEventListener ("load", function() {
+    loader[0].style.display = 'none';
+});
 const domReady = require('domready');
 
 const slideSpeciesTypeMap = {
