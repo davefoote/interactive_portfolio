@@ -16,27 +16,24 @@ body {
 button {
     background: #C5C1F2;
     border-radius: 12px;
-    padding: 14px 28px;
+    padding: 7px 14px;
+    margin: 0 25px;
     border-color: black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.flex-down {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
 }
 
 .buttons_container {
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-end;
     flex-wrap: wrap;
 }
 
