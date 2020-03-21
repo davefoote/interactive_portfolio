@@ -32,6 +32,7 @@
     "concat-stream": "^2.0.0",
     "d3": "^5.15.0",
     "domready": "^1.0.8",
+    "mapshaper": "^0.4.159",
     "minimist": "^1.2.0",
     "simplify-geojson": "^1.0.3",
     "simplify-geometry": "^0.0.2",
