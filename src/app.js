@@ -75,8 +75,8 @@ function render(state, data, last) {
             var chartConfig = {
             target : 'chart',
             data_url : 'external_data.json',
-            width: 900,
-            height: 450,
+            width: 700,
+            height: 400,
             val: 100
         };
     
@@ -103,11 +103,11 @@ function laChart(data) {
         .attr("class", "tooltip")				
         .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     
     var projection = d3.geoAlbersUsa()
         .scale(6000)
-        .translate([width * 2.17, 10]);
+        .translate([width * 2.47, 9]);
     var path = d3.geoPath()
         .projection(projection);
     var svg = d3.select("body")
@@ -145,10 +145,10 @@ function birdsPlot(habs) {
         .attr("class", "tooltip")				
         .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     var projection = d3.geoAlbersUsa()
         .scale(6000)
-        .translate([width * 2.17, 10]);
+        .translate([width * 2.47, 10]);
     var path = d3.geoPath()
         .projection(projection);
     var svg = d3.select("body")
@@ -193,40 +193,40 @@ function fplantsPlot(habs) {
             .attr("class", "tooltip")				
             .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     var projection = d3.geoAlbersUsa()
-                    .scale(6000)
-                    .translate([width * 2.17, 10]);
+        .scale(6000)
+        .translate([width * 2.47, 9]);
     var path = d3.geoPath()
-            .projection(projection);
+        .projection(projection);
     var svg = d3.select("body")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height);
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
     var g = svg.selectAll(".collection")
-            .data(habs.features)
-            .enter()
-            .append("g")
-            .attr("class", "collection");
+        .data(habs.features)
+        .enter()
+        .append("g")
+        .attr("class", "collection");
     svg.selectAll("path")
-          .data(habs.features).enter()
-          .append("path")
-          .attr("d", path)
-          .on("mouseover", function(d) {		
-            div.transition()		
-                .duration(200)		
-                .style("opacity", .75);		
-            div.html(d.properties.sciname + "    Status: " + 
-                     d.properties["status"])
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px")
-            console.log(d.properties.status)
-            console.log(d.properties.sciname);	
-            })
-          .on("mouseout", function(d) {		
-            div.transition()		
-                .duration(500)		
-                .style("opacity", 0);	
+        .data(habs.features).enter()
+        .append("path")
+        .attr("d", path)
+        .on("mouseover", function(d) {		
+          div.transition()		
+            .duration(200)		
+            .style("opacity", .75);		
+          div.html(d.properties.sciname + "    Status: " + 
+                d.properties["status"])
+            .style("left", (d3.event.pageX) + "px")		
+            .style("top", (d3.event.pageY - 28) + "px")
+          console.log(d.properties.status)
+          console.log(d.properties.sciname);	
+          })
+        .on("mouseout", function(d) {		
+          div.transition()		
+            .duration(500)		
+            .style("opacity", 0);	
         })
           .on("click", function(d) {
             window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
@@ -242,10 +242,10 @@ function amphiPlot(habs) {
             .attr("class", "tooltip")				
             .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     var projection = d3.geoAlbersUsa()
                     .scale(6000)
-                    .translate([width * 2.17, 10]);
+                    .translate([width * 2.47, 9]);
     var path = d3.geoPath()
             .projection(projection);
     var svg = d3.select("body")
@@ -291,10 +291,10 @@ function fishesPlot(habs) {
             .attr("class", "tooltip")				
             .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     var projection = d3.geoAlbersUsa()
                     .scale(6000)
-                    .translate([width * 2.17, 13]);
+                    .translate([width * 2.47, 10]);
     var path = d3.geoPath()
             .projection(projection);
     var svg = d3.select("body")
@@ -340,10 +340,10 @@ function crustPlot(habs) {
             .attr("class", "tooltip")				
             .style("opacity", 0);
     var width = 1000;
-    var height = 400;
+    var height = 500;
     var projection = d3.geoAlbersUsa()
                     .scale(6000)
-                    .translate([width * 2.17, 10]);
+                    .translate([width * 2.47, 9]);
     var path = d3.geoPath()
             .projection(projection);
     var svg = d3.select("body")
