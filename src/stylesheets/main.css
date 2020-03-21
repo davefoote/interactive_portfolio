@@ -74,6 +74,22 @@ svg {
 h1 {
     display: flex;
     justify-content: center;
+    padding-bottom: 2px;
+    padding-top: 0px;
+    line-height: 20%;
+}
+
+h2 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 15%;
+    font-style: italic;
+}
+
+h3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 10%;
 }
 
 
