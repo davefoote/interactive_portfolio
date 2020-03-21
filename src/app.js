@@ -130,9 +130,7 @@ function laChart(data) {
             .style("opacity", .75);		
           div.html(d.properties.COUNTY)
             .style("left", (d3.event.pageX) + "px")		
-            .style("top", (d3.event.pageY - 28) + "px")
-          console.log(d.properties.status)
-          console.log(d.properties.sciname);	
+            .style("top", (d3.event.pageY - 28) + "px");	
             })
           .on("mouseout", function(d) {		
             div.transition()		
