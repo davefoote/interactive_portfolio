@@ -180,7 +180,10 @@ function birdsPlot(habs) {
                 .style("opacity", 0);	
         })
           .on("click", function(d) {
-            window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
+            var scientific = d.properties.sciname
+            var sci_split = scientific.split(' ')
+            var wiki_safe = sci_split.slice(0, 2).join(' ')
+            window.open("https://en.wikipedia.org/wiki/" + wiki_safe, "_blank");
           })
           .style("stroke", "#392F16")
           .style("stroke-width", "3")
