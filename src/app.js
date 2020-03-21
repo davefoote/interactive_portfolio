@@ -18,11 +18,11 @@ const slideSpeciesTypeMap = {
 
 domReady(() => {
     Promise.all([d3.json('./data/drp/socal.geojson'),
-                d3.json('./data/la_critters/la_amphibians.geojson'),
-                d3.json('./data/la_critters/la_birds.geojson'),
-                d3.json('./data/la_critters/la_fplants.geojson'),
-                d3.json('./data/la_critters/la_fishes.geojson'),
-                d3.json('./data/la_critters/la_crust.geojson')])
+                d3.json('./data/la_critters/socal_amphibians.geojson'),
+                d3.json('./data/la_critters/socal_birds.geojson'),
+                d3.json('./data/la_critters/socal_fplants.geojson'),
+                d3.json('./data/la_critters/socal_fishes.geojson'),
+                d3.json('./data/la_critters/socal_crust.geojson')])
       .then(
         d => {
             const [back, amphi, birds, fplants, fishes, crust] = d;
