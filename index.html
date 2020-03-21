@@ -1,25 +1,21 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA County's Endangered and Threatened Animals</title>
+    <title>Southern California's Endangered and Threatened Animals</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
+    <div id="loader" class="center"></div> 
     <div id="app">
-      <div class="flex-down">
-          <h1>Critical Habitat Ranges by Species Type</h1>
-          <div>Visualizing the land endangered and threatened</div>
-          <div>birds, insects, amphibians, mammals, and reptiles</div>
-          <div>depend on land in Los Angeles County</div>
-            <div class="buttons-container"></div>
-              <script src="https://unpkg.com/topojson-client@3"></script>
-              <script src="https://unpkg.com/topojson-simplify@3"></script>
-            <div class="map" id="mapzone"></div>
-          <div class="sidebar"></div>
-          <div class="loader"></div>
-          <div class="main-area"></div>
-      </div>
+        <h1 class="flex">Critical Habitat Ranges by Species Type</h1>
+        <div class="flex">Visualizing the land endangered and threatened</div>
+        <div class="flex">birds, insects, amphibians, mammals, and reptiles</div>
+        <div class="flex">depend on everybody's favorite half a state</div>
+        <div class="flex buttons-container"></div>
+        <div class="map" id="mapzone"></div>
+        <div class="sidebar"></div>
+        <div class="main-area"></div>
     </div>
     <script src="bundle.js"></script>
   </body>
