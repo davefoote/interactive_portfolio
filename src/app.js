@@ -77,7 +77,7 @@ function render(state, data, last) {
             data_url : 'external_data.json',
             width: 900,
             height: 450,
-            val: 90
+            val: 100
         };
     
     if (state.slideIdx === 'Birds') {
@@ -99,64 +99,82 @@ function render(state, data, last) {
 };
 
 function laChart(data) {
+    var div = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
     var width = 1000;
     var height = 400;
     
     var projection = d3.geoAlbersUsa()
-                    .scale(6000)
-                    .translate([width * 2.17, 10]);
+        .scale(6000)
+        .translate([width * 2.17, 10]);
     var path = d3.geoPath()
-            .projection(projection);
+        .projection(projection);
     var svg = d3.select("body")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height);
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
     svg.selectAll("path")
-            .data(data.features)
-            .enter()
-            .append("path")
-            .attr("d", path)
-            .attr("width", width)
-            .attr("height", height)
-            .style("stroke", "#605A50")
-            .style("stroke-width", "1")
-            .style("fill", "#fff");            
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("width", width)
+        .attr("height", height)
+        .style("stroke", "#605A50")
+        .style("stroke-width", "1")
+        .style("fill", "#fff")
+        .on("mouseover", function(d) {		
+          div.transition()		
+            .duration(200)		
+            .style("opacity", .75);		
+          div.html(d.properties.COUNTY)
+            .style("left", (d3.event.pageX) + "px")		
+            .style("top", (d3.event.pageY - 28) + "px")
+          console.log(d.properties.status)
+          console.log(d.properties.sciname);	
+            })
+          .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
 };
 
 function birdsPlot(habs) {
     console.log(document.readyState);
     var div = d3.select("body").append("div")	
-            .attr("class", "tooltip")				
-            .style("opacity", 0);
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
     var width = 1000;
     var height = 400;
     var projection = d3.geoAlbersUsa()
-                    .scale(6000)
-                    .translate([width * 2.17, 10]);
+        .scale(6000)
+        .translate([width * 2.17, 10]);
     var path = d3.geoPath()
-            .projection(projection);
+        .projection(projection);
     var svg = d3.select("body")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height);
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
     var g = svg.selectAll("path")
-            .data(habs.features)
-            .enter()
-            .append("g");
+        .data(habs.features)
+        .enter()
+        .append("g");
     svg.selectAll("path")
-          .data(habs.features).enter()
-          .append("path")
-          .attr("d", path)
-          .on("mouseover", function(d) {		
-            div.transition()		
-                .duration(200)		
-                .style("opacity", .75);		
-            div.html(d.properties.sciname + "    Status: " + 
-                     d.properties["status"])
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 28) + "px")
-            console.log(d.properties.status)
-            console.log(d.properties.sciname);	
+        .data(habs.features).enter()
+        .append("path")
+        .attr("d", path)
+        .on("mouseover", function(d) {		
+          div.transition()		
+            .duration(200)		
+            .style("opacity", .75);		
+          div.html(d.properties.sciname + "    Status: " + 
+                d.properties["status"])
+            .style("left", (d3.event.pageX) + "px")		
+            .style("top", (d3.event.pageY - 28) + "px")
+          console.log(d.properties.status)
+          console.log(d.properties.sciname);	
             })
           .on("mouseout", function(d) {		
             div.transition()		
@@ -215,9 +233,9 @@ function fplantsPlot(habs) {
           .on("click", function(d) {
             window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
           })
-          .style("stroke", "#253C78")
+          .style("stroke", "#E4572E")
           .style("stroke-width", "3")
-          .style("fill", "#253C78");
+          .style("fill", "#E4572E");
           console.log("feats: ", habs.features);
 };
 
@@ -264,9 +282,9 @@ function amphiPlot(habs) {
           .on("click", function(d) {
             window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
           })
-          .style("stroke", "#D36582")
+          .style("stroke", "#98AF49")
           .style("stroke-width", "3")
-          .style("fill", "#D36582");
+          .style("fill", "#98AF49");
           console.log("feats: ", habs.features);
 };
 
@@ -313,9 +331,9 @@ function fishesPlot(habs) {
           .on("click", function(d) {
             window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
           })
-          .style("stroke", "#E4572E")
+          .style("stroke", "#253C78")
           .style("stroke-width", "3")
-          .style("fill", "#E4572E");
+          .style("fill", "#253C78");
           console.log("feats: ", habs.features);
 };
 
@@ -362,9 +380,9 @@ function crustPlot(habs) {
           .on("click", function(d) {
             window.open("https://en.wikipedia.org/wiki/" + d.properties.sciname, "_blank");
           })
-          .style("stroke", "#98AF49")
+          .style("stroke", "#D36582")
           .style("stroke-width", "3")
-          .style("fill", "#98AF49");
+          .style("fill", "#D36582");
           console.log("feats: ", habs.features);
 };
 
