@@ -14,8 +14,10 @@ body {
 }
 
 button {
-    background: #BBD4D6;
-    border-radius: 90;
+    background: #C5C1F2;
+    border-radius: 12px;
+    padding: 14px 28px;
+    border-color: black;
 }
 
 .flex {

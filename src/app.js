@@ -123,7 +123,7 @@ function laChart(data) {
         .attr("height", height)
         .style("stroke", "#605A50")
         .style("stroke-width", "1")
-        .style("fill", "#fff")
+        .style("fill", "#DCDAF2")
         .on("mouseover", function(d) {		
           div.transition()		
             .duration(200)		
