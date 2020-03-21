@@ -29,7 +29,7 @@ def main():
     df = gpd.read_file('crithabs/crithabs.shp')
     df.crs = {'init':'epsg:5070'}
     df = df.to_crs(epsg=4326)
-    df.geometry = df.geometry.simplify(.1)
+    df.geometry = df.geometry.simplify(.1) 
 
     socal_habitats = gpd.overlay(socal, df, how='intersection')
     socal.to_file('drp/socal.geojson', driver='GeoJSON')
